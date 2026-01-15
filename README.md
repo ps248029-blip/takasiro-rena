@@ -90,15 +90,16 @@ nav a:hover {
 
 .profile-content {
   position: relative;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .profile-photo {
-  width: 250px;
+  width: 280px;
   height: auto;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
@@ -335,7 +336,8 @@ footer {
 
 <section class="profile-section" id="profile">
   <div class="profile-content">
-    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png" alt="高城玲奈 花柄" class="profile-photo">
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161000.png" alt="高城玲奈 白服正面" class="profile-photo">
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161012.png" alt="高城玲奈 横顔" class="profile-photo">
     <div class="profile-info">
       <h2>高城 玲奈</h2>
       <div class="subtitle">Rena Takashiro</div>
