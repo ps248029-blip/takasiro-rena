@@ -84,19 +84,8 @@ nav a:hover {
 
 /* プロフィールセクション */
 .profile-section {
-  background: url('https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png') center/cover;
+  background-color: #f9f9f9;
   padding: 80px 20px;
-  position: relative;
-}
-
-.profile-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255,255,255,0.85);
 }
 
 .profile-content {
@@ -155,19 +144,8 @@ nav a:hover {
 
 /* 受賞歴・出演歴セクション */
 .history-section {
-  background: url('https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png') center/cover;
+  background-color: white;
   padding: 80px 20px;
-  position: relative;
-}
-
-.history-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255,255,255,0.88);
 }
 
 .history-content {
@@ -236,20 +214,9 @@ nav a:hover {
 
 /* フッターセクション */
 .footer-section {
-  background: url('https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png') center/cover;
+  background-color: #f9f9f9;
   padding: 80px 20px;
-  position: relative;
   text-align: center;
-}
-
-.footer-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255,255,255,0.9);
 }
 
 .footer-content {
@@ -362,8 +329,8 @@ footer {
 </header>
 
 <section class="main-photos">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161000.png" alt="高城玲奈">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161012.png" alt="高城玲奈">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161000.png" alt="高城玲奈 正面">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161012.png" alt="高城玲奈 横顔">
 </section>
 
 <section class="profile-section" id="profile">
