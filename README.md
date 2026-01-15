@@ -329,13 +329,13 @@ footer {
 </header>
 
 <section class="main-photos">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161000.png" alt="高城玲奈 正面">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161000.png" alt="高城玲奈 白い服全身">
   <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161012.png" alt="高城玲奈 横顔">
 </section>
 
 <section class="profile-section" id="profile">
   <div class="profile-content">
-    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png" alt="高城玲奈" class="profile-photo">
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png" alt="高城玲奈 花柄" class="profile-photo">
     <div class="profile-info">
       <h2>高城 玲奈</h2>
       <div class="subtitle">Rena Takashiro</div>
@@ -411,7 +411,7 @@ footer {
     <h2>高城玲奈 Official Web Site</h2>
     <div class="subtitle">高城玲奈 Official Fanclub</div>
     
-    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161023.png" alt="キャラクター" class="pixel-character">
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png" alt="キャラクター" class="pixel-character">
     
     <div class="contact-info">
       <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
