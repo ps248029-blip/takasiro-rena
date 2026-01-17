@@ -71,15 +71,15 @@ nav a {
 .top-photos {
   display: flex;
   justify-content: center;
-  gap: 0;
-  padding: 0;
-  background-color: #e8e8e8;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: white;
 }
 
 .top-photos img {
-  width: 50%;
-  height: auto;
-  display: block;
+  width: auto;
+  height: 500px;
+  object-fit: contain;
 }
 
 /* プロフィールセクション */
@@ -89,22 +89,23 @@ nav a {
 }
 
 .profile-container {
-  max-width: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  gap: 0;
-  align-items: stretch;
+  gap: 50px;
+  align-items: flex-start;
 }
 
 .profile-photo {
-  width: 35%;
+  width: auto;
+  max-width: 400px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .profile-details {
   flex: 1;
-  padding: 80px 100px;
+  padding: 40px 0;
   background-color: white;
 }
 
