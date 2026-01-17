@@ -34,8 +34,13 @@ header {
 }
 
 .logo {
-  width: 60px;
+  width: 70px;
   height: auto;
+}
+
+.name-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .name-title {
@@ -60,63 +65,59 @@ nav a {
   color: #333;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #666;
-}
-
-/* メイン写真セクション */
-.main-photos {
+/* トップ写真 */
+.top-photos {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 50px 20px;
-  background-color: white;
+  gap: 0;
+  padding: 0;
+  background-color: #e8e8e8;
 }
 
-.main-photos img {
-  width: 320px;
+.top-photos img {
+  width: 50%;
   height: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: block;
 }
 
 /* プロフィールセクション */
 .profile-section {
-  background-color: #f9f9f9;
-  padding: 80px 20px;
+  background-color: white;
+  padding: 0;
 }
 
-.profile-content {
-  max-width: 900px;
-  margin: 0 auto;
+.profile-container {
+  max-width: 100%;
+  margin: 0;
   display: flex;
-  gap: 50px;
-  align-items: flex-start;
+  gap: 0;
+  align-items: stretch;
 }
 
 .profile-photo {
-  width: 280px;
+  width: 35%;
   height: auto;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  object-fit: cover;
 }
 
-.profile-info {
+.profile-details {
   flex: 1;
+  padding: 80px 100px;
+  background-color: white;
 }
 
-.profile-info h2 {
-  font-size: 32px;
+.profile-details h2 {
+  font-size: 36px;
   margin-bottom: 5px;
   letter-spacing: 3px;
   border-bottom: 2px solid #333;
   padding-bottom: 10px;
-  display: inline-block;
 }
 
-.profile-info .subtitle {
-  font-size: 14px;
+.profile-details .subtitle {
+  font-size: 16px;
   font-style: italic;
   color: #666;
   margin-bottom: 30px;
@@ -132,118 +133,152 @@ nav a:hover {
 }
 
 .profile-table td {
-  padding: 12px 20px;
+  padding: 15px 0;
   font-size: 16px;
 }
 
 .profile-table td:first-child {
   font-weight: bold;
-  width: 150px;
+  width: 180px;
 }
 
-/* 受賞歴・出演歴セクション */
+/* ヒストリーセクション */
 .history-section {
-  background-color: white;
+  background-image: url('https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png');
+  background-size: cover;
+  background-position: center;
   padding: 80px 20px;
+  position: relative;
+}
+
+.history-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.92);
 }
 
 .history-content {
-  max-width: 1000px;
+  position: relative;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .history-title {
-  font-size: 48px;
-  color: #4dd4ac;
-  font-weight: normal;
-  margin-bottom: 40px;
-  letter-spacing: 2px;
+  font-size: 60px;
+  color: #5FD4AC;
+  font-weight: 300;
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-.history-columns {
-  display: flex;
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
 }
 
-.history-col {
-  flex: 1;
-}
-
-.history-col h3 {
-  font-size: 22px;
+.history-column h3 {
+  font-size: 20px;
   margin-bottom: 20px;
-  padding: 10px;
-  background-color: rgba(123, 104, 238, 0.15);
-  border-left: 4px solid #7b68ee;
+  padding: 12px 15px;
+  background-color: rgba(123, 104, 238, 0.12);
+  border-left: 4px solid #7B68EE;
 }
 
-.history-col ul {
+.history-column ul {
   list-style: none;
 }
 
-.history-col li {
-  padding: 10px 0;
+.history-column li {
+  padding: 12px 0;
   line-height: 1.8;
   border-bottom: 1px dotted #ccc;
+  font-size: 15px;
 }
 
-.award-box {
-  background-color: rgba(238, 232, 255, 0.6);
-  border: 2px solid #9370db;
-  padding: 20px;
+.awards-box {
+  background-color: rgba(238, 232, 255, 0.7);
+  border: 2px solid #9370DB;
+  padding: 25px;
+  border-radius: 8px;
   margin-top: 30px;
-  border-radius: 5px;
 }
 
-.award-box h4 {
-  color: #9370db;
+.awards-box h4 {
+  color: #9370DB;
   font-size: 18px;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
-.award-box ul {
+.awards-box ul {
   list-style: none;
 }
 
-.award-box li {
-  padding: 8px 0;
+.awards-box li {
+  padding: 10px 0;
   border-bottom: none;
+  line-height: 1.8;
 }
 
 /* フッターセクション */
 .footer-section {
-  background-color: #f9f9f9;
+  background-image: url('https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png');
+  background-size: cover;
+  background-position: center;
   padding: 80px 20px;
+  position: relative;
   text-align: center;
+}
+
+.footer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.93);
+}
+
+.footer-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .footer-content h2 {
   font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
 }
 
 .footer-content .subtitle {
-  font-size: 18px;
-  font-style: italic;
+  font-size: 20px;
   margin-bottom: 40px;
 }
 
 .pixel-character {
-  width: 120px;
+  width: 130px;
   height: auto;
   margin: 30px auto;
   display: block;
 }
 
-.contact-info {
+.contact-emails {
   margin: 30px 0;
-  font-size: 16px;
+  font-size: 15px;
 }
 
-.contact-info a {
+.contact-emails a {
   color: #333;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 .social-icons {
@@ -253,10 +288,9 @@ nav a:hover {
   margin: 30px 0;
 }
 
-.social-icons a {
+.social-icons img {
   width: 50px;
   height: 50px;
-  display: inline-block;
 }
 
 .footer-links {
@@ -270,7 +304,7 @@ nav a:hover {
   font-size: 14px;
 }
 
-footer {
+.copyright {
   background-color: #f0f0f0;
   text-align: center;
   padding: 20px;
@@ -279,26 +313,17 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px;
-  }
-  
-  nav ul {
-    gap: 20px;
-  }
-  
-  .main-photos {
+  .top-photos {
     flex-direction: column;
     align-items: center;
   }
   
-  .profile-content {
+  .profile-container {
     flex-direction: column;
   }
   
-  .history-columns {
-    flex-direction: column;
+  .history-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -308,7 +333,7 @@ footer {
 <header>
   <div class="header-left">
     <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202026-01-15%20115840.png" alt="Stardalia Logo" class="logo">
-    <div>
+    <div class="name-section">
       <div class="name-title">高城 玲奈</div>
       <div class="name-en">Rena Takashiro</div>
     </div>
@@ -322,15 +347,49 @@ footer {
   </nav>
 </header>
 
-<section class="main-photos">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png" alt="高城玲奈 白衣装正面">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160719.png" alt="高城玲奈 白衣装横顔">
+<section class="top-photos">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png" alt="高城玲奈">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160719.png" alt="高城玲奈">
 </section>
 
+<div style="background-color: #e8e8e8; padding: 30px 0; text-align: center;">
+  <div class="contact-emails">
+    <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
+    <a href="mailto:info@stardalia.jp">📧 info@stardalia.jp</a>
+  </div>
+  
+  <div class="social-icons">
+    <a href="#">
+      <svg width="50" height="50" viewBox="0 0 50 50">
+        <rect width="50" height="50" rx="8" fill="black"/>
+        <text x="50%" y="55%" fill="white" font-size="28" font-weight="bold" text-anchor="middle" dominant-baseline="middle">𝕏</text>
+      </svg>
+    </a>
+    <a href="#">
+      <svg width="50" height="50" viewBox="0 0 50 50">
+        <defs>
+          <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FCAF45"/>
+            <stop offset="50%" style="stop-color:#E1306C"/>
+            <stop offset="100%" style="stop-color:#833AB4"/>
+          </linearGradient>
+        </defs>
+        <rect width="50" height="50" rx="12" fill="url(#ig)"/>
+        <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="3"/>
+        <circle cx="37" cy="13" r="3" fill="white"/>
+      </svg>
+    </a>
+  </div>
+  
+  <div style="margin-top: 20px;">
+    <a href="#" style="color: #333; text-decoration: underline; font-size: 14px;">メールでご連絡ください</a>
+  </div>
+</div>
+
 <section class="profile-section" id="profile">
-  <div class="profile-content">
-    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png" alt="高城玲奈 花柄" class="profile-photo">
-    <div class="profile-info">
+  <div class="profile-container">
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png" alt="高城玲奈" class="profile-photo">
+    <div class="profile-details">
       <h2>高城 玲奈</h2>
       <div class="subtitle">Rena Takashiro</div>
       <table class="profile-table">
@@ -343,7 +402,7 @@ footer {
           <td>2002年10月9日</td>
         </tr>
         <tr>
-          <td>Native Place</td>
+          <td>Naitive Place</td>
           <td>神奈川県横浜市</td>
         </tr>
         <tr>
@@ -366,8 +425,8 @@ footer {
 <section class="history-section" id="history">
   <div class="history-content">
     <h2 class="history-title">history</h2>
-    <div class="history-columns">
-      <div class="history-col">
+    <div class="history-grid">
+      <div class="history-column">
         <h3>映画</h3>
         <ul>
           <li>『夏空に溶けて』（2019年）</li>
@@ -386,11 +445,11 @@ footer {
         </ul>
       </div>
       
-      <div class="history-col">
-        <div class="award-box">
+      <div class="history-column">
+        <div class="awards-box">
           <h4>受賞歴</h4>
           <ul>
-            <li>第45回シルバースクリーン映画祭 最優秀演女優賞（『風の在りか』／2021年）</li>
+            <li>第45回シルバースクリーン映画祭 最優秀主演女優賞（『風の在りか』／2021年）</li>
             <li>第10回クリスタルドラマアワード 主演女優賞（『静寂の街』／2022年）</li>
             <li>日本フィルムアーツ大賞 最優秀主演女優賞（『月とアトリエ』／2024年）</li>
           </ul>
@@ -407,30 +466,30 @@ footer {
     
     <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161050.png" alt="キャラクター" class="pixel-character">
     
-    <div class="contact-info">
+    <div class="contact-emails">
       <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
       <a href="mailto:info@stardalia.jp">📧 info@stardalia.jp</a>
     </div>
     
     <div class="social-icons">
-      <a href="#" aria-label="X (Twitter)">
-        <svg width="50" height="50" viewBox="0 0 50 50" fill="black">
-          <rect width="50" height="50" rx="5"/>
-          <text x="50%" y="50%" fill="white" font-size="30" text-anchor="middle" dominant-baseline="central">𝕏</text>
+      <a href="#">
+        <svg width="50" height="50" viewBox="0 0 50 50">
+          <rect width="50" height="50" rx="8" fill="black"/>
+          <text x="50%" y="55%" fill="white" font-size="28" font-weight="bold" text-anchor="middle" dominant-baseline="middle">𝕏</text>
         </svg>
       </a>
-      <a href="#" aria-label="Instagram">
+      <a href="#">
         <svg width="50" height="50" viewBox="0 0 50 50">
           <defs>
-            <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+            <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" style="stop-color:#FCAF45"/>
               <stop offset="50%" style="stop-color:#E1306C"/>
               <stop offset="100%" style="stop-color:#833AB4"/>
             </linearGradient>
           </defs>
-          <rect width="50" height="50" rx="12" fill="url(#ig-gradient)"/>
+          <rect width="50" height="50" rx="12" fill="url(#ig)"/>
           <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="3"/>
-          <circle cx="36" cy="14" r="3" fill="white"/>
+          <circle cx="37" cy="13" r="3" fill="white"/>
         </svg>
       </a>
     </div>
@@ -443,9 +502,9 @@ footer {
   </div>
 </section>
 
-<footer>
+<div class="copyright">
   ©Stardalia Entertainment Promotion
-</footer>
+</div>
 
 </body>
 </html>
