@@ -85,7 +85,7 @@ nav a {
 /* プロフィールセクション */
 .profile-section {
   background-color: white;
-  padding: 0;
+  padding: 60px 20px;
 }
 
 .profile-container {
@@ -352,40 +352,6 @@ nav a {
   <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png" alt="高城玲奈">
   <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160719.png" alt="高城玲奈">
 </section>
-
-<div style="background-color: #e8e8e8; padding: 30px 0; text-align: center;">
-  <div class="contact-emails">
-    <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
-    <a href="mailto:info@stardalia.jp">📧 info@stardalia.jp</a>
-  </div>
-  
-  <div class="social-icons">
-    <a href="#">
-      <svg width="50" height="50" viewBox="0 0 50 50">
-        <rect width="50" height="50" rx="8" fill="black"/>
-        <text x="50%" y="55%" fill="white" font-size="28" font-weight="bold" text-anchor="middle" dominant-baseline="middle">𝕏</text>
-      </svg>
-    </a>
-    <a href="#">
-      <svg width="50" height="50" viewBox="0 0 50 50">
-        <defs>
-          <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#FCAF45"/>
-            <stop offset="50%" style="stop-color:#E1306C"/>
-            <stop offset="100%" style="stop-color:#833AB4"/>
-          </linearGradient>
-        </defs>
-        <rect width="50" height="50" rx="12" fill="url(#ig)"/>
-        <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="3"/>
-        <circle cx="37" cy="13" r="3" fill="white"/>
-      </svg>
-    </a>
-  </div>
-  
-  <div style="margin-top: 20px;">
-    <a href="#" style="color: #333; text-decoration: underline; font-size: 14px;">メールでご連絡ください</a>
-  </div>
-</div>
 
 <section class="profile-section" id="profile">
   <div class="profile-container">
