@@ -71,40 +71,41 @@ nav a {
 .top-photos {
   display: flex;
   justify-content: center;
-  gap: 0;
-  padding: 0;
-  background-color: #e8e8e8;
+  gap: 30px;
+  padding: 40px 20px;
+  background-color: white;
 }
 
 .top-photos img {
-  width: 50%;
-  height: auto;
-  display: block;
+  width: auto;
+  height: 500px;
+  object-fit: contain;
 }
 
 /* プロフィールセクション */
 .profile-section {
   background-color: white;
-  padding: 0;
+  padding: 60px 20px;
 }
 
 .profile-container {
-  max-width: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  gap: 0;
-  align-items: stretch;
+  gap: 50px;
+  align-items: flex-start;
 }
 
 .profile-photo {
-  width: 35%;
+  width: auto;
+  max-width: 400px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .profile-details {
   flex: 1;
-  padding: 80px 100px;
+  padding: 40px 0;
   background-color: white;
 }
 
@@ -351,40 +352,6 @@ nav a {
   <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png" alt="高城玲奈">
   <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160719.png" alt="高城玲奈">
 </section>
-
-<div style="background-color: #e8e8e8; padding: 30px 0; text-align: center;">
-  <div class="contact-emails">
-    <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
-    <a href="mailto:info@stardalia.jp">📧 info@stardalia.jp</a>
-  </div>
-  
-  <div class="social-icons">
-    <a href="#">
-      <svg width="50" height="50" viewBox="0 0 50 50">
-        <rect width="50" height="50" rx="8" fill="black"/>
-        <text x="50%" y="55%" fill="white" font-size="28" font-weight="bold" text-anchor="middle" dominant-baseline="middle">𝕏</text>
-      </svg>
-    </a>
-    <a href="#">
-      <svg width="50" height="50" viewBox="0 0 50 50">
-        <defs>
-          <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#FCAF45"/>
-            <stop offset="50%" style="stop-color:#E1306C"/>
-            <stop offset="100%" style="stop-color:#833AB4"/>
-          </linearGradient>
-        </defs>
-        <rect width="50" height="50" rx="12" fill="url(#ig)"/>
-        <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="3"/>
-        <circle cx="37" cy="13" r="3" fill="white"/>
-      </svg>
-    </a>
-  </div>
-  
-  <div style="margin-top: 20px;">
-    <a href="#" style="color: #333; text-decoration: underline; font-size: 14px;">メールでご連絡ください</a>
-  </div>
-</div>
 
 <section class="profile-section" id="profile">
   <div class="profile-container">
