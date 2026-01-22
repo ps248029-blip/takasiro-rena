@@ -71,41 +71,40 @@ nav a {
 .top-photos {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 40px 20px;
-  background-color: white;
+  gap: 0;
+  padding: 0;
+  background-color: #e8e8e8;
 }
 
 .top-photos img {
-  width: auto;
-  height: 500px;
-  object-fit: contain;
+  width: 50%;
+  height: auto;
+  display: block;
 }
 
 /* プロフィールセクション */
 .profile-section {
   background-color: white;
-  padding: 60px 20px;
+  padding: 0;
 }
 
 .profile-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   display: flex;
-  gap: 50px;
-  align-items: flex-start;
+  gap: 0;
+  align-items: stretch;
 }
 
 .profile-photo {
-  width: auto;
-  max-width: 400px;
+  width: 35%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .profile-details {
   flex: 1;
-  padding: 40px 0;
+  padding: 80px 100px;
   background-color: white;
 }
 
@@ -339,23 +338,173 @@ nav a {
       <div class="name-en">Rena Takashiro</div>
     </div>
   </div>
-
-  <!-- 🔥 ここが書き換えた場所 -->
   <nav>
     <ul>
       <li><a href="#profile">Profile</a></li>
       <li><a href="#history">History</a></li>
-      <li><a href="fanclub.html">Fanclub</a></li>
+      <li><a href="#fanclub">Fanclub</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- 以下は元のまま -->
 <section class="top-photos">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png">
-  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160719.png">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160536.png" alt="高城玲奈">
+  <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160719.png" alt="高城玲奈">
 </section>
 
-<!-- 以下略（内容はあなたが貼ったものと同じ） -->
+<div style="background-color: #e8e8e8; padding: 30px 0; text-align: center;">
+  <div class="contact-emails">
+    <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
+    <a href="mailto:info@stardalia.jp">📧 info@stardalia.jp</a>
+  </div>
+  
+  <div class="social-icons">
+    <a href="#">
+      <svg width="50" height="50" viewBox="0 0 50 50">
+        <rect width="50" height="50" rx="8" fill="black"/>
+        <text x="50%" y="55%" fill="white" font-size="28" font-weight="bold" text-anchor="middle" dominant-baseline="middle">𝕏</text>
+      </svg>
+    </a>
+    <a href="#">
+      <svg width="50" height="50" viewBox="0 0 50 50">
+        <defs>
+          <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FCAF45"/>
+            <stop offset="50%" style="stop-color:#E1306C"/>
+            <stop offset="100%" style="stop-color:#833AB4"/>
+          </linearGradient>
+        </defs>
+        <rect width="50" height="50" rx="12" fill="url(#ig)"/>
+        <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="3"/>
+        <circle cx="37" cy="13" r="3" fill="white"/>
+      </svg>
+    </a>
+  </div>
+  
+  <div style="margin-top: 20px;">
+    <a href="#" style="color: #333; text-decoration: underline; font-size: 14px;">メールでご連絡ください</a>
+  </div>
+</div>
+
+<section class="profile-section" id="profile">
+  <div class="profile-container">
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20160945.png" alt="高城玲奈" class="profile-photo">
+    <div class="profile-details">
+      <h2>高城 玲奈</h2>
+      <div class="subtitle">Rena Takashiro</div>
+      <table class="profile-table">
+        <tr>
+          <td>Age</td>
+          <td>23歳</td>
+        </tr>
+        <tr>
+          <td>Birthday</td>
+          <td>2002年10月9日</td>
+        </tr>
+        <tr>
+          <td>Naitive Place</td>
+          <td>神奈川県横浜市</td>
+        </tr>
+        <tr>
+          <td>Height</td>
+          <td>162cm</td>
+        </tr>
+        <tr>
+          <td>Blood</td>
+          <td>A型</td>
+        </tr>
+        <tr>
+          <td>Speciality</td>
+          <td>ピアノ</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="history-section" id="history">
+  <div class="history-content">
+    <h2 class="history-title">history</h2>
+    <div class="history-grid">
+      <div class="history-column">
+        <h3>映画</h3>
+        <ul>
+          <li>『夏空に溶けて』（2019年）</li>
+          <li>『風の在りか』（2021年）</li>
+          <li>『心音-しんおん-』（2023年）</li>
+          <li>『月とアトリエ』（2024年）</li>
+          <li>『星降る夜に、もう一度』（2025年）</li>
+        </ul>
+        
+        <h3 style="margin-top: 30px;">ドラマ</h3>
+        <ul>
+          <li>『静寂の街』（2022年／NHK）</li>
+          <li>『恋の残響』（2023年／TBS）</li>
+          <li>『AFTERGLOW』（2023年／Netflix）</li>
+          <li>『シンデレラ・ブルー』（2025年／Netflix）</li>
+        </ul>
+      </div>
+      
+      <div class="history-column">
+        <div class="awards-box">
+          <h4>受賞歴</h4>
+          <ul>
+            <li>第45回シルバースクリーン映画祭 最優秀主演女優賞（『風の在りか』／2021年）</li>
+            <li>第10回クリスタルドラマアワード 主演女優賞（『静寂の街』／2022年）</li>
+            <li>日本フィルムアーツ大賞 最優秀主演女優賞（『月とアトリエ』／2024年）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer-section" id="fanclub">
+  <div class="footer-content">
+    <h2>高城玲奈 Official Web Site</h2>
+    <div class="subtitle">高城玲奈 Official Fanclub</div>
+    
+    <img src="https://raw.githubusercontent.com/ps248029-blip/takasiro-rena/main/スクリーンショット%202025-12-15%20161050.png" alt="キャラクター" class="pixel-character">
+    
+    <div class="contact-emails">
+      <a href="mailto:rena.takashiro@stardalia.jp">📧 rena.takashiro@stardalia.jp</a>
+      <a href="mailto:info@stardalia.jp">📧 info@stardalia.jp</a>
+    </div>
+    
+    <div class="social-icons">
+      <a href="#">
+        <svg width="50" height="50" viewBox="0 0 50 50">
+          <rect width="50" height="50" rx="8" fill="black"/>
+          <text x="50%" y="55%" fill="white" font-size="28" font-weight="bold" text-anchor="middle" dominant-baseline="middle">𝕏</text>
+        </svg>
+      </a>
+      <a href="#">
+        <svg width="50" height="50" viewBox="0 0 50 50">
+          <defs>
+            <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#FCAF45"/>
+              <stop offset="50%" style="stop-color:#E1306C"/>
+              <stop offset="100%" style="stop-color:#833AB4"/>
+            </linearGradient>
+          </defs>
+          <rect width="50" height="50" rx="12" fill="url(#ig)"/>
+          <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="3"/>
+          <circle cx="37" cy="13" r="3" fill="white"/>
+        </svg>
+      </a>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#">当サイトについて</a>
+      <a href="#">利用規約</a>
+      <a href="#">メールでご連絡ください</a>
+    </div>
+  </div>
+</section>
+
+<div class="copyright">
+  ©Stardalia Entertainment Promotion
+</div>
+
 </body>
 </html>
