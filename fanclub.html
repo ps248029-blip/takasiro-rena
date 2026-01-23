@@ -170,18 +170,6 @@ nav a {
   display: none;
 }
 
-.message.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.message.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
 footer {
   background-color: #f0f0f0;
   text-align: center;
@@ -226,60 +214,41 @@ footer {
 
 <div class="main-content">
   <div class="fanclub-container">
-    <!-- ログインボックス -->
+    <!-- ログインボックス（課題用：予約ページへ案内） -->
     <div class="fanclub-box">
       <h2>ログイン</h2>
       <p class="subtitle">Login</p>
-      
-      <form id="loginForm">
-        <div class="form-group">
-          <label>メールアドレス</label>
-          <input type="email" id="loginEmail" placeholder="example@example.com" required>
-        </div>
-        
-        <div class="form-group">
-          <label>パスワード</label>
-          <input type="password" id="loginPassword" placeholder="パスワードを入力" required>
-        </div>
-        
-        <button type="submit" class="btn-primary">ログイン</button>
-      </form>
-      
-      <div id="loginMessage" class="message"></div>
-      
+
+      <div class="info-text">
+        ※この課題では「ファンクラブのログイン機能」は実装対象外です。<br>
+        予約フォームへ進んでください。
+      </div>
+
+      <a class="btn-primary" href="reservation.html" style="display:block; text-decoration:none; margin-top:20px;">
+        予約フォームへ進む
+      </a>
+
       <div class="link-text">
-        <a href="#">パスワードを忘れた方はこちら</a>
+        <a href="reservation.html">予約フォームはこちら</a>
       </div>
     </div>
     
-    <!-- 新規入会ボックス -->
+    <!-- 新規入会ボックス（課題用：予約ページへ案内） -->
     <div class="fanclub-box">
       <h2>新規入会</h2>
       <p class="subtitle">New Registration</p>
-      
-      <form id="registerForm">
-        <div class="form-group">
-          <label>お名前</label>
-          <input type="text" id="registerName" placeholder="山田 太郎" required>
-        </div>
-        
-        <div class="form-group">
-          <label>メールアドレス</label>
-          <input type="email" id="registerEmail" placeholder="example@example.com" required>
-        </div>
-        
-        <div class="form-group">
-          <label>パスワード</label>
-          <input type="password" id="registerPassword" placeholder="8文字以上" required>
-        </div>
-        
-        <button type="submit" class="btn-primary">新規登録</button>
-      </form>
-      
-      <div id="registerMessage" class="message"></div>
-      
+
       <div class="info-text">
-        ※ファンクラブ会員になると、限定コンテンツの閲覧や、イベントの先行予約などの特典がご利用いただけます。
+        ※この課題では「会員登録（会員番号発行）」は実装対象外です。<br>
+        予約フォームへ進んでください。
+      </div>
+
+      <a class="btn-primary" href="reservation.html" style="display:block; text-decoration:none; margin-top:20px;">
+        予約フォームへ進む
+      </a>
+
+      <div class="info-text">
+        ※予約フォーム送信後、完了ページへ移動します。
       </div>
     </div>
   </div>
@@ -288,84 +257,6 @@ footer {
 <footer>
   ©Stardalia Entertainment Promotion
 </footer>
-
-<script>
-// Google ColabのサーバーURL
-const API_URL = 'https://whats-apply-oak-pulse.trycloudflare.com';
-
-
-// ログインフォーム
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
-  const messageDiv = document.getElementById('loginMessage');
-  
-  try {
-    const response = await fetch(`${API_URL}/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password })
-    });
-    
-    const data = await response.json();
-    
-    if (response.ok) {
-      messageDiv.className = 'message success';
-      messageDiv.textContent = 'ログインに成功しました！';
-      messageDiv.style.display = 'block';
-    } else {
-      messageDiv.className = 'message error';
-      messageDiv.textContent = data.detail || 'ログインに失敗しました';
-      messageDiv.style.display = 'block';
-    }
-  } catch (error) {
-    messageDiv.className = 'message error';
-    messageDiv.textContent = 'サーバーに接続できませんでした';
-    messageDiv.style.display = 'block';
-  }
-});
-
-// 新規登録フォーム
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const name = document.getElementById('registerName').value;
-  const email = document.getElementById('registerEmail').value;
-  const password = document.getElementById('registerPassword').value;
-  const messageDiv = document.getElementById('registerMessage');
-  
-  try {
-    const response = await fetch(`${API_URL}/register`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, password })
-    });
-    
-    const data = await response.json();
-    
-    if (response.ok) {
-      messageDiv.className = 'message success';
-      messageDiv.textContent = '登録が完了しました！';
-      messageDiv.style.display = 'block';
-      document.getElementById('registerForm').reset();
-    } else {
-      messageDiv.className = 'message error';
-      messageDiv.textContent = data.detail || '登録に失敗しました';
-      messageDiv.style.display = 'block';
-    }
-  } catch (error) {
-    messageDiv.className = 'message error';
-    messageDiv.textContent = 'サーバーに接続できませんでした';
-    messageDiv.style.display = 'block';
-  }
-});
-</script>
 
 </body>
 </html>
