@@ -1,5 +1,6 @@
 // Python（Colab）側のAPIのURL
-const API_BASE ="https://traffic-insertion-thereby-electrical.trycloudflare.com";
+const API_BASE = "https://points-throat-optical-genre.trycloudflare.com";
+
 
 
 // ページが読み込まれてから実行
