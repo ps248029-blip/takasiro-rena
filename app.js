@@ -1,5 +1,5 @@
 // Python（Colab）側のAPIのURL（CloudflareのURLを毎回ここだけ更新）
-const API_BASE = "https://projected-dicke-shareholders-commerce.trycloudflare.com";
+const API_BASE = "https://tennessee-lease-firewire-quantitative.trycloudflare.com";
 
 // ページが読み込まれてから実行
 document.addEventListener("DOMContentLoaded", () => {
