@@ -1,48 +1,400 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ファンクラブ登録</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>予約フォーム｜高城玲奈 Official Web Site</title>
+
   <style>
-    body{font-family:sans-serif;max-width:560px;margin:40px auto;padding:0 16px}
-    label{display:block;margin:14px 0 6px}
-    input,select{width:100%;padding:10px;font-size:16px}
-    button{width:100%;padding:12px;margin-top:16px;font-size:16px;cursor:pointer}
-    .msg{margin-top:14px;padding:12px;border-radius:8px;background:#f6f6f6}
+    /* ===== 全体（公式サイトっぽく：余白多め・白ベース・落ち着き） ===== */
+    :root{
+      --bg: #ffffff;
+      --line: #e6e6e6;
+      --text: #111;
+      --sub: #666;
+      --accent: #1a1a1a;
+      --chip: #f6f6f6;
+      --danger: #b40000;
+    }
+
+    body{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      /* 明朝系（環境により最適が自動で当たる） */
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "MS Mincho", serif;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+
+    /* ===== 上部ヘッダー（控えめ） ===== */
+    header{
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .header-inner{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 18px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand .title{
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .brand .subtitle{
+      font-size: 12px;
+      color: var(--sub);
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    nav{
+      display: flex;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--sub);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a{
+      padding: 6px 2px;
+      border-bottom: 1px solid transparent;
+    }
+    nav a:hover{
+      border-bottom-color: var(--line);
+    }
+
+    /* ===== メイン ===== */
+    main{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 34px 18px 70px;
+    }
+
+    .page-title{
+      margin: 0 0 6px;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+    }
+
+    .page-lead{
+      margin: 0 0 22px;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    .rule{
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+      margin: 18px 0 30px;
+      color: var(--sub);
+      font-size: 13px;
+    }
+
+    /* ===== フォームの枠（公式サイトの“埋め込み”っぽい） ===== */
+    .panel{
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 26px;
+    }
+
+    .panel-head{
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .panel-head h2{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+    }
+
+    .panel-head .note{
+      margin: 0;
+      color: var(--sub);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* ===== フォーム ===== */
+    form{
+      margin: 0;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 18px;
+    }
+
+    .field{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .full{
+      grid-column: 1 / -1;
+    }
+
+    label{
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+    }
+
+    .req{
+      margin-left: 8px;
+      font-size: 11px;
+      color: var(--danger);
+      letter-spacing: 0.08em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="time"],
+    textarea{
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--line);
+      padding: 12px 12px;
+      background: #fff;
+      font-size: 16px; /* スマホで勝手に拡大されにくい */
+      font-family: inherit;
+      outline: none;
+    }
+
+    textarea{
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color: #bdbdbd;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+    }
+
+    /* ===== 支払方法（公式サイトっぽく：控えめな枠＋行間） ===== */
+    .radio-box{
+      border: 1px solid var(--line);
+      background: var(--chip);
+      padding: 14px 14px;
+    }
+
+    .radio-item{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .radio-item input{
+      width: 16px;
+      height: 16px;
+      accent-color: #111;
+    }
+
+    .radio-note{
+      margin: 8px 0 0;
+      font-size: 12px;
+      color: var(--sub);
+    }
+
+    /* ===== 送信ボタン（目立つけど上品） ===== */
+    .actions{
+      margin-top: 22px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .btn{
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn:hover{ opacity: 0.92; }
+
+    .hint{
+      margin: 0;
+      font-size: 12px;
+      color: var(--sub);
+    }
+
+    /* ===== フッター ===== */
+    footer{
+      border-top: 1px solid var(--line);
+      color: var(--sub);
+      font-size: 12px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    /* ===== スマホ ===== */
+    @media (max-width: 780px){
+      .grid{ grid-template-columns: 1fr; }
+      .panel{ padding: 20px; }
+      .panel-head{ flex-direction: column; align-items: flex-start; }
+      nav{ gap: 12px; }
+      .brand .subtitle{ display: none; }
+      .actions{ justify-content: stretch; }
+      .btn{ width: 100%; padding: 14px 18px; }
+    }
   </style>
 </head>
+
 <body>
-  <h1>ファンクラブ登録</h1>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="title">高城 玲奈</div>
+        <div class="subtitle">Rena Takashiro</div>
+      </div>
+      <nav>
+        <a href="index.html">Top</a>
+        <a href="index.html#profile">Profile</a>
+        <a href="index.html#history">History</a>
+        <a href="index.html#fanclub">Fanclub</a>
+      </nav>
+    </div>
+  </header>
 
-  <form id="registrationForm">
-    <label>お名前</label>
-    <input id="name" required />
+  <main>
+    <h1 class="page-title">予約</h1>
+    <p class="page-lead">必要事項をご入力のうえ、送信してください。</p>
 
-    <label>フリガナ</label>
-    <input id="kana" required />
+    <div class="rule">
+      ※このページは課題用の予約システムです。<br>
+      送信後、JavaScriptでPython（Colab）APIに通信し、成功した場合は完了ページへ移動します。
+    </div>
 
-    <label>年齢</label>
-    <input id="age" type="number" min="13" max="120" required />
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Reservation Form</h2>
+        <p class="note">※ 必須項目をご確認ください</p>
+      </div>
 
-    <label>メールアドレス</label>
-    <input id="email" type="email" required />
+      <!-- ✅Colab連携のため id/name を固定（ここ重要） -->
+      <form id="reservationForm" action="#" method="post">
+        <div class="grid">
+          <!-- 氏名 -->
+          <div class="field">
+            <label for="name">氏名<span class="req">必須</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="例）山田 花子"
+              required
+            />
+          </div>
 
-    <label>性別</label>
-    <select id="gender" required>
-      <option value="">選択してください</option>
-      <option value="male">男性</option>
-      <option value="female">女性</option>
-      <option value="other">その他</option>
-      <option value="no-answer">回答しない</option>
-    </select>
+          <!-- メールアドレス -->
+          <div class="field">
+            <label for="email">メールアドレス<span class="req">必須</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="例）example@mail.com"
+              required
+            />
+          </div>
 
-    <button type="submit">登録する</button>
-  </form>
+          <!-- 希望日 -->
+          <div class="field">
+            <label for="date">希望日<span class="req">必須</span></label>
+            <input type="date" id="date" name="date" required />
+          </div>
 
-  <div class="msg" id="msg" style="display:none;"></div>
+          <!-- ✅希望時間（追加） -->
+          <div class="field">
+            <label for="time">希望時間<span class="req">必須</span></label>
+            <input type="time" id="time" name="time" required />
+          </div>
 
-<script src="./config.js"></script>
-<script src="./app.js"></script>
+          <!-- 支払方法（選択式） -->
+          <div class="field">
+            <label>支払方法<span class="req">必須</span></label>
+
+            <div class="radio-box">
+              <label class="radio-item">
+                <input type="radio" name="payment" value="現地支払い" required />
+                現地支払い
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="payment" value="銀行振り込み" />
+                銀行振り込み
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="payment" value="クレジットカード（番号入力なし）" />
+                クレジットカード（番号入力なし）
+              </label>
+              <p class="radio-note">※支払情報（番号など）の入力は不要です</p>
+            </div>
+          </div>
+
+          <!-- メッセージ（任意） -->
+          <div class="field full">
+            <label for="message">メッセージ（任意）</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="ご希望やご質問があればご入力ください"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <p class="hint">送信後、予約完了ページへ移動します。</p>
+          <button class="btn" type="submit">送信する</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © Stardalia Entertainment Promotion
+  </footer>
+
+  <!-- ✅JSは body の最後／キャッシュ回避 -->
+  <script src="app.js?v=2"></script>
 </body>
 </html>
