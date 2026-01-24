@@ -177,6 +177,7 @@
     input[type="text"],
     input[type="email"],
     input[type="date"],
+    input[type="time"],
     textarea{
       width: 100%;
       box-sizing: border-box;
@@ -290,8 +291,7 @@
         <a href="index.html">Top</a>
         <a href="index.html#profile">Profile</a>
         <a href="index.html#history">History</a>
-        <!-- ✅ここだけ変更：index.html#fanclub → reservation.html -->
-        <a href="reservation.html">Fanclub</a>
+        <a href="index.html#fanclub">Fanclub</a>
       </nav>
     </div>
   </header>
@@ -342,6 +342,12 @@
           <div class="field">
             <label for="date">希望日<span class="req">必須</span></label>
             <input type="date" id="date" name="date" required />
+          </div>
+
+          <!-- ✅希望時間（追加） -->
+          <div class="field">
+            <label for="time">希望時間<span class="req">必須</span></label>
+            <input type="time" id="time" name="time" required />
           </div>
 
           <!-- 支払方法（選択式） -->
