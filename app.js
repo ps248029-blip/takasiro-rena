@@ -1,5 +1,5 @@
-// Python（Colab）側のAPIのURL
-const API_BASE = "https://induced-diving-dates-durham.trycloudflare.com";
+// Python（Colab）側のAPIのURL（CloudflareのURLを毎回ここだけ更新）
+const API_BASE = "https://YOUR-CLOUDFLARE-URL.trycloudflare.com";
 
 // ページが読み込まれてから実行
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,20 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // 通常の送信を止める
 
-    // ✅ 追加：支払方法が選ばれていないときの安全チェック
+    // 支払方法チェック
     const paymentEl = document.querySelector('input[name="payment"]:checked');
     if (!paymentEl) {
       alert("支払方法を選択してください");
       return;
     }
 
-    // 入力値をまとめる（data を作る）
+    // 希望時間（reservation.html に id="time" がある前提）
+    const timeEl = document.querySelector("#time");
+    if (!timeEl || !timeEl.value) {
+      alert("希望時間を選択してください");
+      return;
+    }
+
+    // 入力値をまとめる
     const data = {
       name: document.querySelector("#name").value,
       email: document.querySelector("#email").value,
       date: document.querySelector("#date").value,
-      payment: paymentEl.value, // ✅ ここも変更：paymentEl から取得
-      message: document.querySelector("#message").value,
+      time: timeEl.value,
+      payment: paymentEl.value,
+      message: document.querySelector("#message").value || "",
     };
 
     try {
@@ -36,11 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const json = await res.json();
 
-      if (json.ok) {
+      if (res.ok && json.ok) {
         // 成功したら完了ページへ
         window.location.href = "reservation-done.html";
       } else {
-        alert("予約に失敗しました");
+        // サーバー側の理由を出す（超大事：原因が分かる）
+        alert(json.detail || "予約に失敗しました");
       }
     } catch (error) {
       alert("通信に失敗しました。Colabが起動しているか確認してください。");
