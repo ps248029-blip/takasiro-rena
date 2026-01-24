@@ -1,5 +1,5 @@
 // Python（Colab）側のAPIのURL
-const API_BASE = "https://trusted-honolulu-agricultural-extract.trycloudflare.com";
+const API_BASE = "https://float-sectors-pose-novel.trycloudflare.com";
 
 
 
