@@ -1,1 +1,1 @@
-https://claire-mic-importantly-terminals.trycloudflare.com
+https://alarm-craft-find-study.trycloudflare.com
