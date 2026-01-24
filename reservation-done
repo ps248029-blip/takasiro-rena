@@ -169,8 +169,7 @@
         <a href="index.html">Top</a>
         <a href="index.html#profile">Profile</a>
         <a href="index.html#history">History</a>
-        <!-- ★ここだけ変更：Fanclub → 予約ページへ -->
-        <a href="reservation.html">Fanclub</a>
+        <a href="index.html#fanclub">Fanclub</a>
       </nav>
     </div>
   </header>
