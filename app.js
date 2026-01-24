@@ -1,67 +1,50 @@
-// ★ここだけ毎回貼り替える（Colabで出る trycloudflare のURL）
-const API_BASE = window.API_BASE;
+// Python（Colab）側のAPIのURL
+const API_BASE = "https://cities-sara-citysearch-orchestra.trycloudflare.com";
+
+// ページが読み込まれてから実行
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("#registrationForm");
-  const msg = document.querySelector("#msg");
+  const form = document.querySelector("#reservationForm");
+  if (!form) return; // フォームが無いページでは何もしない
 
-  const show = (text) => {
-    msg.style.display = "block";
-    msg.textContent = text;
-  };
-
-  if (!form) return;
-
+  // フォーム送信時の処理
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // 通常の送信を止める
 
-    const data = {
-      name: document.querySelector("#name").value.trim(),
-      kana: document.querySelector("#kana").value.trim(),
-      age: Number(document.querySelector("#age").value),
-      email: document.querySelector("#email").value.trim(),
-      gender: document.querySelector("#gender").value,
-    };
-
-    // age が 0 のとき弾かないように、未入力チェックはこうするのが安全
-    if (!data.name || !data.kana || !Number.isFinite(data.age) || !data.email || !data.gender) {
-      show("未入力があります");
+    // ✅ 追加：支払方法が選ばれていないときの安全チェック
+    const paymentEl = document.querySelector('input[name="payment"]:checked');
+    if (!paymentEl) {
+      alert("支払方法を選択してください");
       return;
     }
 
+    // 入力値をまとめる（data を作る）
+    const data = {
+      name: document.querySelector("#name").value,
+      email: document.querySelector("#email").value,
+      date: document.querySelector("#date").value,
+      payment: paymentEl.value, // ✅ ここも変更：paymentEl から取得
+      message: document.querySelector("#message").value,
+    };
+
     try {
-      const res = await fetch(API_BASE + "/api/fanclub/register", {
+      // Python（Colab）のAPIへ送信
+      const res = await fetch(API_BASE + "/api/reserve", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      // Colab側は基本 JSON を返す想定
-      const j = await res.json().catch(() => ({}));
+      const json = await res.json();
 
-      if (!res.ok) {
-        show("登録に失敗しました（サーバーエラー）");
-        return;
+      if (json.ok) {
+        // 成功したら完了ページへ
+        window.location.href = "reservation-done.html";
+      } else {
+        alert("予約に失敗しました");
       }
-
-      // Colab仕様：ok:false + error:"already_registered"
-      if (j.ok === false && j.error === "already_registered") {
-        show("このメールアドレスは既に登録されています（重複登録できません）");
-        return;
-      }
-
-      if (j.ok === true && j.member_no) {
-        show("登録完了！会員番号: " + j.member_no);
-        form.querySelector('button[type="submit"]').disabled = true;
-        return;
-      }
-
-      // 想定外
-      show("登録に失敗しました（応答が不正です）");
-      console.log("unexpected response:", j);
-
-    } catch (err) {
-      show("通信エラー：Colabが起動しているか確認して");
-      console.error(err);
+    } catch (error) {
+      alert("通信に失敗しました。Colabが起動しているか確認してください。");
+      console.error(error);
     }
   });
 });
