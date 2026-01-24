@@ -1,5 +1,5 @@
 // Python（Colab）側のAPIのURL
-const API_BASE = "https://mic-cube-qualify-pack.trycloudflare.com";
+const API_BASE = "https://ruling-handles-added-rain.trycloudflare.com";
 
 // ページが読み込まれてから実行
 document.addEventListener("DOMContentLoaded", () => {
